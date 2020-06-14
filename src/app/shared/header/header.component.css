@@ -1,0 +1,66 @@
+.navbar-header,
+.navbar-collapse {
+  background: rgb(54, 96, 146);
+}
+
+.navItem a i {
+  color: white;
+  font-size: 2rem;
+  margin: 20px;
+
+}
+
+
+.navItem a {
+  position: relative;
+  width: 70px;
+  height: 70px;
+
+
+}
+
+.navItem {
+  width: 70px;
+  height: 70px;
+  margin-right: 30px;
+}
+
+.navItem:hover {
+  background: rgb(52, 79, 114);
+  color: rgb(54, 96, 146);
+  width: 70px;
+
+}
+
+.navItem a i:hover {
+  color: rgb(54, 96, 146);
+
+}
+
+.navItemDos a i {
+  font-size: 1rem;
+}
+
+.imgLogo img {
+  width: 50px;
+  overflow: hidden;
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .navItem {
+    width: 70px;
+    height: 70px;
+    margin-right: 5px;
+  }
+
+  .navItem a i {
+    color: white;
+    font-size: 1.5rem;
+
+  }
+
+
+}
