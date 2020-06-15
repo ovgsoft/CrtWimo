@@ -38,6 +38,7 @@ export class RegisterComponent implements OnInit {
   };
 
   suma = {
+    noProducto: null,
     ventas: null,
     stock: null,
     costoAlmacen: null,

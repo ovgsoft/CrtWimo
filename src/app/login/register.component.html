@@ -10,7 +10,7 @@
               </div>
               <div class="col-md-7 col-lg-7 col-sm-12">
                 <img src="https://ovgsoft.com/android/{{producto.imagen}}" style="width:60px;" alt="">
-                <!-- <input class=" inputsEstilos" type="text" [(ngModel)]="producto.imagen" /> -->
+                <input class=" inputsEstilos" type="hidden" [(ngModel)]="producto.imagen" />
               </div>
 
             </div>
@@ -37,8 +37,7 @@
                 <label class="inputsEstilos2">Categoria</label>
               </div>
               <div class="col-md-7 col-lg-7 col-sm-12">
-                <select class="inputsEstilos">
-                  <option>{{producto.id_categoria}}</option>
+                <select class="inputsEstilos" [(ngModel)]="producto.id_categoria">
                   <option [value]="categ.id" *ngFor="let categ of categorias">{{categ.categoria}}</option>
                 </select>
 
@@ -172,6 +171,7 @@
                     <table class="display nowrap table table-hover table-striped table-bordered dataTable" width="100%">
                       <thead>
                         <tr>
+                          <th>No productos</th>
                           <th>Stock</th>
                           <th>Precio compra</th>
                           <th>Precio venta</th>
@@ -181,6 +181,7 @@
                       </thead>
                       <tbody style="color: black; font-size: 12px; font-weight: bold;">
                         <tr *ngFor="let suma of sumas">
+                          <td>{{suma.noProducto}}</td>
                           <td>{{suma.stock}}</td>
                           <td>{{suma.costoAlmacen | currency }}</td>
                           <td>{{suma.montoVenta | currency }}</td>
