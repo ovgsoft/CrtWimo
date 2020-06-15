@@ -10,12 +10,20 @@ import { ServiceModule } from './service/service.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UsuarioService } from './service/usuario/usuario.service';
-
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment.prod';
+import { ChatComponent } from './components/chat/chat.component';
+import { ChatService } from './service/chat.service';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { ChartsModule } from 'ng2-charts';
+import { BarrasComponent } from './components/barras/barras.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ChatComponent,
+    BarrasComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +31,15 @@ import { UsuarioService } from './service/usuario/usuario.service';
     PagesModule,
     ServiceModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    ChartsModule
   ],
-  providers: [UsuarioService],
+  providers: [
+    UsuarioService,
+    ChatService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

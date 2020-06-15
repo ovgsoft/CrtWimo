@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "CrtWiMo",
+      "public": "dist/CrtWiMo",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

@@ -1,110 +1,120 @@
-    <div class="col-12">
+    <div class="container-fluid">
       <div class="row">
 
-        <div class="col-3">
+        <div class="col-md-4 col-lg-4 col-sm-12">
           <div class="card-body">
-            <h3>Campos requeridos</h3>
+            <h1>Campos requeridos</h1>
             <div class="row">
-              <div class="col-5">
-                <label class="inputsEstilos2">Nombre</label>
+              <div class="col-md-5 col-lg-5 col-sm-12">
+                <label class="inputsEstilos2">Imagen</label>
               </div>
-              <div class="col-7">
-                <textarea id="nom" rows="2" cols="1" class="inputsEstilos" type="text"
-                  [(ngModel)]="usuario.nombre"></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-5">
-                <label class="inputsEstilos2">No relacion</label>
-              </div>
-              <div class="col-7">
-                <input class="inputsEstilos" type="number" [(ngModel)]="usuario.documento" />
-
+              <div class="col-md-7 col-lg-7 col-sm-12">
+                <img src="https://ovgsoft.com/android/{{producto.imagen}}" style="width:60px;" alt="">
+                <!-- <input class=" inputsEstilos" type="text" [(ngModel)]="producto.imagen" /> -->
               </div>
 
             </div>
             <div class="row">
-              <div class="col-5">
-                <label class="inputsEstilos2">E-mail</label>
+              <div class="col-md-5 col-lg-5 col-sm-12">
+                <label class="inputsEstilos2">Codigo</label>
               </div>
-              <div class="col-7">
-                <input class="inputsEstilos" type="email" [(ngModel)]="usuario.email" />
+              <div class="col-md-7 col-lg-7 col-sm-12">
+                <input class="inputsEstilos" type="number" [(ngModel)]="producto.codigo" />
               </div>
             </div>
             <div class="row">
-              <div class="col-5">
-                <label class="inputsEstilos2">Telefono</label>
+
+              <div class="col-md-5 col-lg-5 col-sm-12">
+                <label class="inputsEstilos2">Descripcion</label>
               </div>
-              <div class="col-7">
-                <input class="inputsEstilos" type="text" [(ngModel)]="usuario.telefono" />
+              <div class="col-md-7 col-lg-7 col-sm-12">
+                <textarea rows="3" class="inputsEstilos" type="text" [(ngModel)]="producto.descripcion"></textarea>
               </div>
 
             </div>
             <div class="row">
-              <div class="col-5">
-                <label class="inputsEstilos2">Direccion</label>
+              <div class="col-md-5 col-lg-5 col-sm-12">
+                <label class="inputsEstilos2">Categoria</label>
               </div>
-              <div class="col-7">
-                <textarea rows="2" cols="1" class="inputsEstilos" type="text"
-                  [(ngModel)]="usuario.direccion"></textarea>
+              <div class="col-md-7 col-lg-7 col-sm-12">
+                <select class="inputsEstilos">
+                  <option>{{producto.id_categoria}}</option>
+                  <option [value]="categ.id" *ngFor="let categ of categorias">{{categ.categoria}}</option>
+                </select>
+
+              </div>
+
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-5 col-lg-5 col-sm-12">
+                <label class="inputsEstilos2">Precio de compra</label>
+              </div>
+              <div class="col-md-7 col-lg-7 col-sm-12">
+                <input class="inputsEstilos" type="number" [(ngModel)]="producto.precio_compra" />
               </div>
 
             </div>
             <div class="row">
-              <div class="col-5">
-                <label class="inputsEstilos2">Fecha Nac</label>
+              <div class="col-md-5 col-lg-5 col-sm-12">
+                <label class="inputsEstilos2">Precio de venta</label>
               </div>
-              <div class="col-7">
-                <input class="inputsEstilos" type="date" [(ngModel)]="usuario.fecha_nacimiento" />
-              </div>
-
-            </div>
-            <div class="row">
-              <div class="col-5">
-                <label class="inputsEstilos2">Compras</label>
-              </div>
-              <div class="col-7">
-                <input class="inputsEstilos" type="number" [(ngModel)]="usuario.compras" />
+              <div class="col-md-7 col-lg-7 col-sm-12">
+                <input class="inputsEstilos" type="number" [(ngModel)]="producto.precio_venta" />
               </div>
 
             </div>
             <div class="row">
-              <div class="col-5">
-                <label class="inputsEstilos2">Ultima compra</label>
+              <div class="col-md-5 col-lg-5 col-sm-12">
+                <label class="inputsEstilos2">Stock</label>
               </div>
-              <div class="col-7">
-                <input class="inputsEstilos" type="date" [(ngModel)]="usuario.ultima_compra" />
+              <div class="col-md-7 col-lg-7 col-sm-12">
+                <input class="inputsEstilos" type="number" [(ngModel)]="producto.stock" />
               </div>
 
             </div>
             <div class="row">
-              <div class="col-5">
+              <div class="col-md-5 col-lg-5 col-sm-12">
+                <label class="inputsEstilos2"> Ventas</label>
+              </div>
+              <div class="col-md-7 col-lg-7 col-sm-12">
+                <input class="inputsEstilos" type="number" [(ngModel)]="producto.ventas" />
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-5 col-lg-5 col-sm-12">
                 <label class="inputsEstilos2">Fecha</label>
               </div>
-              <div class="col-7">
-                <input class="inputsEstilos" type="date" [(ngModel)]="usuario.fecha" />
+              <div class="col-md-7 col-lg-7 col-sm-12">
+                <input class="inputsEstilos" type="date" [value]="producto.fecha" [(ngModel)]="producto.fecha" />
               </div>
 
             </div>
-
             <hr>
+
             <div class="row">
-              <div class="col-6">
-                <button class="btn btnFormulario m-b-20 p-10 btn-block waves-effect waves-light"
-                  (click)="altaUsuario();">
+              <div class="col-md-12 col-lg-6 col-sm-12">
+                <button style="z-index: 0;" class="btn btnFormulario m-b-20 p-10 btn-block waves-effect waves-light"
+                  (click)="altaProducto();">
                   AGREGAR </button>
               </div>
-              <div class="col-6">
-                <button id="modificar" class="btn btnFormulario m-b-20 p-10 btn-block waves-effect waves-light"
-                  (click)="editarUsuario();"> MODIFICAR </button>
+              <div class="col-md-12 col-lg-6 col-sm-12">
+                <button style="z-index: 0;" class="btn btnFormulario m-b-20 p-10 btn-block waves-effect waves-light"
+                  (click)="editarProducto();">
+                  MODIFICAR </button>
               </div>
+
             </div>
           </div>
 
-
-
+          <app-barras></app-barras>
         </div>
-        <div class="col-9">
+
+
+
+        <div class="col-md-8 col-lg-8 col-sm-12">
           <ng-template #sin>
             <p>No hay productos registrados.</p>
           </ng-template>
@@ -112,70 +122,82 @@
             <div class="card-body">
               <div class="my-custom-scrollbar table-wrapper-scroll-y table-responsive m-t-40">
                 <table class="display nowrap table table-hover table-striped table-bordered dataTable" id="example23"
-                  *ngIf="hayRegistros(); else sin">
-                  <thead class="encabezado">
+                  *ngIf="hayProductos(); else sin">
+                  <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Nombre</th>
-                      <th>No relacion</th>
-                      <th>Email</th>
-                      <th>Telefono</th>
-                      <th>Direccion</th>
-                      <th>Fecha Nac</th>
-                      <th>Compras</th>
-                      <th>Ultima compra</th>
-                      <th>Fecha</th>
-                      <th></th>
+                      <th style="width:150px !important;">Descripcion</th>
+                      <th style="width:30px !important;">Foto</th>
+                      <th style="width:20px !important;">Stock</th>
+                      <th style="width:30px !important;">Precio compra</th>
+                      <th style="width:30px !important;">Precio venta</th>
+                      <th style="width:30px !important;">Ventas (pza)</th>
+                      <th style="width:30px !important;">Monto venta</th>
+                      <th style="width:30px !important;">Borrar</th>
                     </tr>
                   </thead>
 
                   <tbody style="color: black; font-size: 12px; font-weight: bold;">
-                    <tr *ngFor="let usuario of usuarios">
-                      <td (click)="seleccionarUsuario(usuario.id)"> {{usuario.id }} </td>
-                      <td (click)="seleccionarUsuario(usuario.id)"> {{usuario.nombre }} </td>
-                      <td (click)="seleccionarUsuario(usuario.id)"> {{usuario.documento }} </td>
-                      <td (click)="seleccionarUsuario(usuario.id)"> {{usuario.email }} </td>
-                      <td (click)="seleccionarUsuario(usuario.id)"> {{usuario.telefono }} </td>
-                      <td (click)="seleccionarUsuario(usuario.id)"> {{usuario.direccion }} </td>
-                      <td (click)="seleccionarUsuario(usuario.id)"> {{usuario.fecha_nacimiento }} </td>
-                      <td (click)="seleccionarUsuario(usuario.id)"> {{usuario.compras | currency }}</td>
-                      <td (click)="seleccionarUsuario(usuario.id)"> {{usuario.ultima_compra }}</td>
-                      <td (click)="seleccionarUsuario(usuario.id)"> {{usuario.fecha }}</td>
+                    <tr *ngFor="let producto of productos">
+                      <td (click)="seleccionarProducto(producto.id)"> {{producto.descripcion }} </td>
+                      <td (click)="seleccionarProducto(producto.id)"><img style="width: 30px;"
+                          src="https://ovgsoft.com/android/{{producto.imagen }}"></td>
+                      <td (click)="seleccionarProducto(producto.id)"> {{producto.stock }} </td>
+                      <td (click)="seleccionarProducto(producto.id)"> {{producto.precio_compra | currency }} </td>
+                      <td (click)="seleccionarProducto(producto.id)"> {{producto.precio_venta | currency }}</td>
+                      <td (click)="seleccionarProducto(producto.id)"> {{producto.ventas}} PZA</td>
+                      <td> {{producto.ganancia | currency}}</td>
                       <td>
                         <button class="btn btn-danger m-b-20 p-10 btn-block waves-effect waves-light"
-                          (click)="bajaUsuario(usuario.id)">
+                          (click)="bajaProducto(producto.id)">
                           Borrar
                         </button>
                       </td>
                     </tr>
-
-
                   </tbody>
-                  <tfoot class="encabezado">
-                    <tr *ngFor="let suma of sumas" style="background: black; color: white;">
-                      <th>
-                        <h3 style="color: white;">TOTALES</h3>
-                      </th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th class="resultado" style="width: 10%; font-size: 1rem;">{{ suma.total | currency }}</th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                    </tr>
+                  <tfoot>
 
                   </tfoot>
 
                 </table>
 
-
               </div>
+              <div class="col-12 my-custom-scrollbar2 table-wrapper-scroll-y table-responsive m-t-40">
+                <div class="row">
 
+                  <div class="col-4">
+
+                  </div>
+                  <div class="col-7">
+
+                    <table class="display nowrap table table-hover table-striped table-bordered dataTable" width="100%">
+                      <thead>
+                        <tr>
+                          <th>Stock</th>
+                          <th>Precio compra</th>
+                          <th>Precio venta</th>
+                          <th>Ventas (pza)</th>
+                          <th>Monto venta</th>
+                        </tr>
+                      </thead>
+                      <tbody style="color: black; font-size: 12px; font-weight: bold;">
+                        <tr *ngFor="let suma of sumas">
+                          <td>{{suma.stock}}</td>
+                          <td>{{suma.costoAlmacen | currency }}</td>
+                          <td>{{suma.montoVenta | currency }}</td>
+                          <td>{{suma.ventas }}</td>
+                          <td>{{suma.ganancia | currency }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-1">
+
+                  </div>
+
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
 
@@ -187,14 +209,13 @@
 
     <div class="col-12">
       <div class="row">
-        <div class="col-3">
-        </div>
-        <div class="col-3"></div>
-        <div class="col-3"></div>
-        <div class="col-3">
+        <div class="col-6">
+          <div class="row">
 
 
+          </div>
         </div>
+        <div class="col-6"></div>
 
       </div>
     </div>
@@ -206,3 +227,7 @@
         <div class="col-3"></div>
       </div>
     </div>
+
+
+
+    <app-chat></app-chat>

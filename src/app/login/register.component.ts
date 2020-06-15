@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario/usuario.service';
 import swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,6 +13,14 @@ export class RegisterComponent implements OnInit {
   productos = null;
   sumas = null;
   alerta: string;
+  categorias = null;
+
+  categ = {
+    id: null,
+    categoria: null,
+    fecha: null
+  };
+
   producto = {
     id: null,
     codigo: null,
@@ -22,11 +31,18 @@ export class RegisterComponent implements OnInit {
     precio_venta: null,
     ventas: null,
     id_categoria: null,
-    fecha: null
+    fecha: null,
+    costoAlmacen: null,
+    montoVenta: null,
+    ganancia: null
   };
 
   suma = {
-    total: null
+    ventas: null,
+    stock: null,
+    costoAlmacen: null,
+    montoVenta: null,
+    ganancia: null
   };
   usuario = {
     id: null,
@@ -44,14 +60,16 @@ export class RegisterComponent implements OnInit {
   constructor(private us: UsuarioService) { }
   ngOnInit() {
     this.obtenerUsuarios();
-    // this.obtenerSuma();
+    this.obtenerProductos();
+    this.obtenerSuma();
+    this.obtenerCategorias();
+    this.graficas();
   }
 
   obtenerUsuarios() {
     this.us.obtenerUsuarios().subscribe(
       result => this.usuarios = result
     );
-    this.obtenerSuma();
   }
 
   obtenerSuma() {
@@ -59,16 +77,19 @@ export class RegisterComponent implements OnInit {
       result => this.sumas = result
     );
 
+
+
   }
 
-
-  obtenerProductos() {
-    this.us.obtenerProductos().subscribe(
-      result => this.productos = result
-
+  obtenerCategorias() {
+    this.us.obtenerCategorias().subscribe(
+      result => this.categorias = result
     );
-    console.log(this.productos);
+
   }
+
+
+
   altaUsuario() {
     if (this.usuario.nombre == null) {
       swal.fire('Alerta del sistema', 'No debe dejar ningun campo requerido en blanco', 'error');
@@ -130,6 +151,79 @@ export class RegisterComponent implements OnInit {
       return true;
     }
   }
+
+  // Productos
+  obtenerProductos() {
+    this.us.obtenerProductos().subscribe(
+      result => this.productos = result
+
+    );
+
+
+  }
+  altaProducto() {
+    if (this.producto.codigo == null) {
+      swal.fire('Alerta del sistema', 'No debe dejar ningun campo requerido en blanco', 'error');
+
+    } else {
+
+
+      this.us.altaProducto(this.productos).subscribe(
+        datos => {
+          if (datos['resultado'] == 'OK') {
+            this.obtenerProductos();
+          }
+        }
+      );
+    }
+  }
+
+  bajaProducto(id) {
+
+
+    this.us.bajaProducto(id).subscribe(
+      datos => {
+        if (datos['resultado'] == 'OK') {
+          this.obtenerProductos();
+        }
+      }
+    );
+  }
+  editarProducto() {
+
+    // tslint:disable-next-line: max-line-length
+    if (this.producto.codigo == null ||
+      this.producto.descripcion == null ||
+      this.producto.imagen == null ||
+      this.producto.precio_venta == null) {
+
+      swal.fire('Alerta del sistema', 'Debe seleccionar un producto', 'error');
+
+    } else {
+
+      // console.log(this.producto);
+
+      this.us.editarProducto(this.producto).subscribe(
+        datos => {
+          if (datos['resultado'] == 'OK') {
+            this.obtenerProductos();
+            this.obtenerSuma();
+          }
+        }
+      );
+    }
+  }
+
+  seleccionarProducto(id) {
+    this.us.seleccionarProducto(id).subscribe(
+      result => this.producto = result[0]
+    );
+    localStorage.setItem('stock_', this.producto.stock);
+    localStorage.setItem('venta_', this.producto.ventas);
+    localStorage.setItem('producto', this.producto.descripcion);
+    // this.us.datos();
+
+  }
   hayProductos() {
     if (this.productos == null) {
       return false;
@@ -137,4 +231,17 @@ export class RegisterComponent implements OnInit {
       return true;
     }
   }
+
+
+  graficas() {
+    this.us.obtenerGraficas().subscribe(
+      result => this.sumas = result
+    );
+
+
+
+  }
+
+
+
 }

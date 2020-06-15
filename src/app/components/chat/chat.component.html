@@ -1,0 +1,37 @@
+  <footer class="fter">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2" style="top:10px">
+        </div>
+
+        <div class="col-5 recuadro">
+          <div class="app-mensajes" id="app-mensajes">
+
+            <div *ngFor="let chat of _cs.chats">
+              <img src="../../../assets/images/CWtitle.ico" width="20px;" alt="">
+              <span class="badge">
+                {{ chat.mensaje }} </span>
+              <p>
+                {{ chat.fecha_enviado }} | {{ chat.uid }}
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-2 recuadro">
+          <textarea type="text" name="mensaje" [(ngModel)]="mensaje" class="form-control"
+            (keyup.enter)="enviar_mensaje()" placeholder="Enviar mensaje" cols="30" rows="5"
+            style="background: none; border: none; color: white;">
+          </textarea>
+        </div>
+
+        <div class="col-2" style="top:20px">
+          <button class="btn btnFormulario btn-block waves-effect waves-light">
+            AGREGAR </button>
+          <button class="btn btnFormulario btn-block waves-effect waves-light">
+            AGREGAR </button>
+        </div>
+      </div>
+    </div>
+  </footer>

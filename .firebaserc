@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "wimo-6a128": {
+      "hosting": {
+        "CrtWiMo": [
+          "wimo-6a128"
+        ]
+      }
+    }
+  }
+}
