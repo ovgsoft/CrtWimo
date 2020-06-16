@@ -1,101 +1,48 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CrtWiMo</title>
     <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="assets/css/_all-skins.min.css">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/CWtitle.ico">
-    <title>Admin Pro Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
-    <!-- <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/colors/default-dark.css" id="theme" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/datatables/jquery.dataTables.min.css">
+    <link href="assets/datatables/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="assets/datatables/responsive.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/spinners.css">
     <link rel="stylesheet" href="assets/iconos/style.css">
   </head>
 
-  <body class="fix-header card-no-border fix-sidebar">
-    <div class="preloader">
+  <body class="hold-transition skin-blue-light sidebar-mini">
+    <!-- <div class="preloader">
       <div class="loader">
         <div class="loader__figure"></div>
         <p class="loader__label">Control WiMO</p>
       </div>
-    </div>
-
-
-
+    </div> -->
     <app-root></app-root>
-
-
   </body>
-  <script src="assets/plugins/jquery/jquery.min.js"></script>
-  <script src="assets/plugins/bootstrap/js/popper.min.js"></script>
-  <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/perfect-scrollbar.jquery.min.js"></script>
-  <script src="assets/js/waves.js"></script>
-  <script src="assets/js/sidebarmenu.js"></script>
-  <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
-  <script src="assets/plugins/sparkline/jquery.sparkline.min.js"></script>
-  <script src="assets/js/custom.min.js"></script>
-  <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-  <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-  <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
-
-  <script>
-    $(document).ready(function () {
-      $('#example23').DataTable({
-        "deferRender": true,
-        "retrieve": true,
-        "processing": true,
-        "language": {
-
-          "sProcessing": "Procesando...",
-          "sLengthMenu": "Mostrar _MENU_ registros",
-          "sZeroRecords": "No se encontraron resultados",
-          "sEmptyTable": "Ningún dato disponible en esta tabla",
-          "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
-          "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0",
-          "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-          "sInfoPostFix": "",
-          "sSearch": "Buscar:",
-          "sUrl": "",
-          "sInfoThousands": ",",
-          "sLoadingRecords": "Cargando...",
-          "oPaginate": {
-            "sFirst": "Primero",
-            "sLast": "Último",
-            "sNext": "Siguiente",
-            "sPrevious": "Anterior"
-          },
-          "oAria": {
-            "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-          }
-
-        }
-
-      });
-    });
-
-    // Create the chart
-
-  </script>
-  <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+  <script src="assets/js/jquery-3.1.1.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/app.min.js"></script>
+  <!-- <script src="assets/js/custom.js"></script> -->
+  <script src="assets/datatables/jquery.dataTables.min.js"></script>
+  <script src="assets/datatables/dataTables.buttons.min.js"></script>
+  <script src="assets/datatables/buttons.html5.min.js"></script>
+  <script src="assets/datatables/buttons.colVis.min.js"></script>
+  <script src="assets/datatables/jszip.min.js"></script>
+  <script src="assets/datatables/pdfmake.min.js"></script>
+  <script src="assets/datatables/vfs_fonts.js"></script>
+  <script src="assets/js/bootbox.min.js"></script>
+  <script src="assets/js/tablas.js"></script>
+  <script src="assets/js/bootstrap-select.min.js"></script>
 
 </html>

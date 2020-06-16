@@ -18,6 +18,7 @@ import { SlidebarComponent } from './slidebar/slidebar.component';
     SlidebarComponent,
     BreadcrumbsComponent,
     NopagefoundComponent
+
   ],
   exports: [
     NopagefoundComponent,

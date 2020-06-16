@@ -66,80 +66,19 @@
   height: 100%;
 }
 
-.my-custom-scrollbar {
-  position: relative;
-  height: 400px;
-  overflow: scroll;
-}
 
-.my-custom-scrollbar2 {
-  position: relative;
-  height: 150px;
-
-}
-
-
-
-.table-wrapper-scroll-y {
-  display: block;
-}
-
-
-.table tbody tr td {
-  margin-top: 25%;
-  font-size: 0.8rem;
-
-}
-
-.table tbody tr:hover {
+table tbody tr:hover {
   cursor: pointer;
-  background: rgb(54, 96, 146, 0.3);
-
-}
-
-thead th {
-  position: -webkit-sticky;
-  /* for Safari */
-  position: sticky;
-  top: 0;
-  background: rgb(54, 96, 146);
-  font-size: 0.8rem;
-  color: #FFF;
-  z-index: 999;
-}
-
-thead th:first-child {
-  left: 0;
-  z-index: 1;
-}
-
-tbody th {
-  position: -webkit-sticky;
-  /* for Safari */
-  position: sticky;
-  left: 0;
-  background: #FFF;
-  border-right: 1px solid #CCC;
+  background: rgb(52, 79, 114);
+  color: #fff;
 }
 
 
-
-
-tfoot tr {
-  position: -webkit-sticky;
-  /* for Safari */
-  position: sticky;
-  bottom: 0;
-  background: rgb(54, 96, 146);
-  font-size: 0.8rem;
-  color: #FFF;
-  z-index: 999;
+table tfoot {
+  background: rgb(119, 123, 158);
+  color: #fff;
 }
 
-tfoot tr:first-child {
-  left: 0;
-  z-index: 1;
-}
 
 
 footer {
@@ -228,6 +167,7 @@ footer p {
   background: rgb(54, 96, 146);
 }
 
+
 .navbar-header {
   background: rgb(52, 79, 114);
 }
@@ -239,28 +179,20 @@ footer p {
   margin: 30px 10px 10px 10px;
 }
 
-
-@media screen and (max-width: 600px) {
-
-  footer {
-    width: 100%;
-    background: rgb(54, 96, 146);
-    color: #ffffff;
-    text-align: center;
-    z-index: 0;
-    height: 200px;
-    position: fixed;
-    bottom: -160px;
-    transition-duration: 0.4s;
-  }
-
-  .recuadro {
-    border: 1px solid white;
-    height: 60px;
-    background: rgb(52, 76, 114);
-    margin: 30px 10px 10px 10px;
-  }
+.recuadro_ {
+  display: inline-block;
+  height: 120px;
+  margin: 30px 10px 10px 10px;
 }
+
+.recuadro_ button {
+  margin: 10px;
+  background: lavender;
+  border: black;
+  color: black;
+}
+
+
 
 
 .main-container {
@@ -287,7 +219,6 @@ footer p {
   text-align-last: left;
   overflow-y: scroll;
   height: 120px;
-  /*background:gray;*/
   padding: 5px;
 }
 

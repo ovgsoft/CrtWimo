@@ -15,3 +15,14 @@
 .iconosMenu {
   color: white;
 }
+
+.main-sidebar,
+.sidebar-menu,
+.header {
+  background: rgb(52, 79, 114) !important;
+  color: aliceblue;
+}
+
+.skin-blue-light .sidebar a {
+  color: aliceblue !important;
+}

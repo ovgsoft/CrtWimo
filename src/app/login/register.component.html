@@ -111,123 +111,68 @@
           <app-barras></app-barras>
         </div>
 
-
-
         <div class="col-md-8 col-lg-8 col-sm-12">
           <ng-template #sin>
             <p>No hay productos registrados.</p>
           </ng-template>
-          <div class="card">
-            <div class="card-body">
-              <div class="my-custom-scrollbar table-wrapper-scroll-y table-responsive m-t-40">
-                <table class="display nowrap table table-hover table-striped table-bordered dataTable" id="example23"
-                  *ngIf="hayProductos(); else sin">
-                  <thead>
-                    <tr>
-                      <th style="width:150px !important;">Descripcion</th>
-                      <th style="width:30px !important;">Foto</th>
-                      <th style="width:20px !important;">Stock</th>
-                      <th style="width:30px !important;">Precio compra</th>
-                      <th style="width:30px !important;">Precio venta</th>
-                      <th style="width:30px !important;">Ventas (pza)</th>
-                      <th style="width:30px !important;">Monto venta</th>
-                      <th style="width:30px !important;">Borrar</th>
-                    </tr>
-                  </thead>
+          <div class="box">
 
-                  <tbody style="color: black; font-size: 12px; font-weight: bold;">
-                    <tr *ngFor="let producto of productos">
-                      <td (click)="seleccionarProducto(producto.id)"> {{producto.descripcion }} </td>
-                      <td (click)="seleccionarProducto(producto.id)"><img style="width: 30px;"
-                          src="https://ovgsoft.com/android/{{producto.imagen }}"></td>
-                      <td (click)="seleccionarProducto(producto.id)"> {{producto.stock }} </td>
-                      <td (click)="seleccionarProducto(producto.id)"> {{producto.precio_compra | currency }} </td>
-                      <td (click)="seleccionarProducto(producto.id)"> {{producto.precio_venta | currency }}</td>
-                      <td (click)="seleccionarProducto(producto.id)"> {{producto.ventas}} PZA</td>
-                      <td> {{producto.ganancia | currency}}</td>
-                      <td>
-                        <button class="btn btn-danger m-b-20 p-10 btn-block waves-effect waves-light"
-                          (click)="bajaProducto(producto.id)">
-                          Borrar
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
+            <div class="panel-body table-responsive">
+              <table id="tabla" datatable class="row-border hover" *ngIf="hayProductos(); else sin">
+                <thead>
+                  <tr>
+                    <th>Descripcion</th>
+                    <th>Foto</th>
+                    <th>Stock</th>
+                    <th>Precio compra</th>
+                    <th>Precio venta</th>
+                    <th>Ventas (pza)</th>
+                    <th>Monto venta</th>
+                    <th>Borrar</th>
+                  </tr>
+                </thead>
 
-                  </tfoot>
+                <tbody style="color: black; font-size: 12px; font-weight: bold;">
+                  <tr *ngFor="let producto of productos">
+                    <td (click)="seleccionarProducto(producto.id)"> {{producto.descripcion }} </td>
+                    <td (click)="seleccionarProducto(producto.id)"><img style="width: 30px;"
+                        src="https://ovgsoft.com/android/{{producto.imagen }}"></td>
+                    <td (click)="seleccionarProducto(producto.id)"> {{producto.stock }} </td>
+                    <td (click)="seleccionarProducto(producto.id)"> {{producto.precio_compra }} </td>
+                    <td (click)="seleccionarProducto(producto.id)"> {{producto.precio_venta }}</td>
+                    <td (click)="seleccionarProducto(producto.id)"> {{producto.ventas}} PZA</td>
+                    <td> {{producto.ganancia }}</td>
+                    <td>
+                      <button class="btn btn-danger m-b-20 p-10 btn-block waves-effect waves-light"
+                        (click)="bajaProducto(producto.id)">
+                        Borrar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>TOTALES</th>
+                    <th id="sub2"></th>
+                    <th id="sub3"></th>
+                    <th id="sub4"></th>
+                    <th id="sub5"></th>
+                    <th id="sub6"></th>
+                    <th id="sub7"></th>
+                    <th id="sub8"></th>
+                  </tr>
 
-                </table>
+                </tfoot>
 
-              </div>
-              <div class="col-12 my-custom-scrollbar2 table-wrapper-scroll-y table-responsive m-t-40">
-                <div class="row">
+              </table>
 
-                  <div class="col-4">
-
-                  </div>
-                  <div class="col-7">
-
-                    <table class="display nowrap table table-hover table-striped table-bordered dataTable" width="100%">
-                      <thead>
-                        <tr>
-                          <th>No productos</th>
-                          <th>Stock</th>
-                          <th>Precio compra</th>
-                          <th>Precio venta</th>
-                          <th>Ventas (pza)</th>
-                          <th>Monto venta</th>
-                        </tr>
-                      </thead>
-                      <tbody style="color: black; font-size: 12px; font-weight: bold;">
-                        <tr *ngFor="let suma of sumas">
-                          <td>{{suma.noProducto}}</td>
-                          <td>{{suma.stock}}</td>
-                          <td>{{suma.costoAlmacen | currency }}</td>
-                          <td>{{suma.montoVenta | currency }}</td>
-                          <td>{{suma.ventas }}</td>
-                          <td>{{suma.ganancia | currency }}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="col-1">
-
-                  </div>
-
-                </div>
-              </div>
             </div>
 
           </div>
         </div>
-
-
-
-      </div>
-
-    </div>
-
-    <div class="col-12">
-      <div class="row">
-        <div class="col-6">
-          <div class="row">
-
-
-          </div>
-        </div>
-        <div class="col-6"></div>
-
       </div>
     </div>
-    <div class="col-12">
-      <div class="row">
-        <div class="col-3"></div>
-        <div class="col-3"></div>
-        <div class="col-3"></div>
-        <div class="col-3"></div>
-      </div>
-    </div>
+
 
 
 

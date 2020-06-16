@@ -1,6 +1,7 @@
-.navbar-header,
-.navbar-collapse {
-  background: rgb(54, 96, 146);
+.main-header,
+.navbar,
+.logo {
+  background: rgb(54, 96, 146) !important;
 }
 
 .navItem a i {

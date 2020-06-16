@@ -17,13 +17,16 @@ import { ChatService } from './service/chat.service';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { ChartsModule } from 'ng2-charts';
 import { BarrasComponent } from './components/barras/barras.component';
+import { DataTablesModule } from 'angular-datatables';
+import { VentasComponent } from './components/ventas/ventas.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     ChatComponent,
-    BarrasComponent
+    BarrasComponent,
+    VentasComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { BarrasComponent } from './components/barras/barras.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    ChartsModule
+    ChartsModule,
+    DataTablesModule
   ],
   providers: [
     UsuarioService,

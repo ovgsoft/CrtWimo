@@ -1,10 +1,7 @@
-  <footer class="fter">
-    <div class="container-fluid">
+    <footer class="main-footer">
       <div class="row">
-        <div class="col-2" style="top:10px">
-        </div>
 
-        <div class="col-5 recuadro">
+        <div class="col-sm-5 col-md-5 col-lg-5 recuadro">
           <div class="app-mensajes" id="app-mensajes">
 
             <div *ngFor="let chat of _cs.chats">
@@ -19,19 +16,27 @@
 
 
         </div>
-        <div class="col-2 recuadro">
+        <div class="col-sm-2 col-md-2 col-lg-2 recuadro">
           <textarea type="text" name="mensaje" [(ngModel)]="mensaje" class="form-control"
             (keyup.enter)="enviar_mensaje()" placeholder="Enviar mensaje" cols="30" rows="5"
             style="background: none; border: none; color: white;">
           </textarea>
         </div>
 
-        <div class="col-2" style="top:20px">
+        <div class="col-sm-2 col-md-2 col-lg-2 recuadro_">
           <button class="btn btnFormulario btn-block waves-effect waves-light">
             AGREGAR </button>
           <button class="btn btnFormulario btn-block waves-effect waves-light">
             AGREGAR </button>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+
+
+    <!-- <footer class="main-footer">
+
+          <div class="pull-right hidden-xs">
+            <b></b>
+          </div>
+          <strong> <a href="#"></a>.</strong>
+        </footer> -->
